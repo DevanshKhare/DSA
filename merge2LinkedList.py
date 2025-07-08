@@ -161,7 +161,7 @@ class LinkedList:
                 list1 = list1.next
             current = current.next
         
-        if list1:
+        if list1: ## here if after the loop any item is left append it to the list
             current.next = list1
         else:
             current.next = list2
