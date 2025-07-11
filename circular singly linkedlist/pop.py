@@ -95,6 +95,8 @@ class CSLinkedList:
         return False
     
     def pop(self):
+        if self.head is None:
+            return None
         if self.head.next == self.head:
             self.head = None
             self.tail = None
