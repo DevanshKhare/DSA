@@ -18,8 +18,7 @@ class CSLinkedList:
             if current.next == self.head:
                 result += " --> head"
                 break
-            if current.next != None:
-                result += " -> "
+            result += " -> "
             current = current.next
         return result
 
@@ -157,8 +156,6 @@ class CSLinkedList:
             else:
                 second.append(current.value)
             current = current.next
-        first.tail.next = None
-        second.tail.next = None
         return first, second
 csll = CSLinkedList()
 csll.append(10)
