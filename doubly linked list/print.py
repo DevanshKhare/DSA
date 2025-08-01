@@ -1,0 +1,39 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None
+    
+class DSLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+    def __str__(self):
+        current = self.head
+        result = "DSLinkedList: "
+        while current is not None:
+            result += str(current.value)
+            if current.next is not None:
+                result += "<->"
+            current = current.next
+        return result
+    
+    def append(self, value):
+        new_node = Node(value)
+        if self.head == None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+        self.length += 1
+
+ll = DSLinkedList()
+ll.append(10)
+ll.append(20)
+ll.append(30)
+ll.append(40)
+print(ll)
