@@ -110,12 +110,18 @@ class DSLinkedList:
         self.length += 1
 
     def popFirst(self):
+        if not self.head:
+            return None
         popped_node = self.head
-        self.head = popped_node.next
-        self.head.prev = None
-        popped_node.next = None
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = popped_node.next
+            self.head.prev = None
+            popped_node.next = None
         self.length -= 1
-        
+
 ll = DSLinkedList()
 ll.append(10)
 ll.append(20)
