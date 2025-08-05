@@ -10,13 +10,25 @@ class CirularDoublyLinkedList:
         self.tail = None
         self.length = 0
 
+    def __str__(self):
+        result = "Doubly Circular Linked List: "
+        current = self.head
+        while current is not None:
+            result += str(current.value)
+            if current.next == self.head:
+                result += " <-head-> "
+                break
+            current = current.next
+            result += " <-> "
+        return result
+
     def append(self, value):
         new_node = Node(value)
         if self.head == None:
-            new_node.next = new_node
-            new_node.prev = new_node
             self.head = new_node
             self.tail = new_node
+            new_node.next = new_node
+            new_node.prev = new_node
         else:
             self.tail.next = new_node
             self.head.prev = new_node
@@ -28,5 +40,5 @@ class CirularDoublyLinkedList:
 ll = CirularDoublyLinkedList()
 ll.append(10)
 ll.append(20)
-ll.append(30)
-print(ll.length)
+ll.append(40)
+print(ll)
