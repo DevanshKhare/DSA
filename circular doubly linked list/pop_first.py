@@ -127,12 +127,11 @@ class CircularDoublyLinkedList:
 
     def pop_first(self):
         popped_node = self.head
-        popped_node.prev = None
-        popped_node.next = None
         self.head = self.head.next
         self.tail.next = self.head
         self.head.prev = self.tail
-        self.length -= 1
+        popped_node.prev = None
+        popped_node.next = None
 
 ll = CircularDoublyLinkedList()
 ll.append(10)
