@@ -6,6 +6,8 @@ class Stack:
         return len(self.items) == 0
     
     def __str__(self):
+        if self.is_empty():
+            return "Stack is empty"
         values = [str(x) for x in reversed(self.items)]
         return "\n".join(values)
 
