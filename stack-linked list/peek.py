@@ -8,6 +8,13 @@ class Stack:
         self.top = None
         self.length = 0
 
+    def is_empty(self):
+        return self.length == 0
+    
+    def clear(self):
+        self.top = None
+        self.length = 0
+
     def push(self, value):
         new_node = Node(value)
         new_node.next = self.top
