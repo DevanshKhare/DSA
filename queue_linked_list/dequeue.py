@@ -35,9 +35,11 @@ class Queue:
     def dequeue(self):
         if self.front is None:
             return "Queue is empty"
+        removed = self.front
         self.front = self.front.next
         self.length -= 1
-    
+        return removed
+
     def peek(self):
         return self.front
 
